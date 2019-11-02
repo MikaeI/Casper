@@ -1,76 +1,22 @@
 <li class="row row-tight col-lg-4 col-md-4 mb-4">
   <a href="{{url}}" class="col-lg-4 col-md-4">
     {{#if feature_image}}
-        <img class="rounded"
-            srcset="{{img_url feature_image size="s"}} 300w,
-                    {{img_url feature_image size="m"}} 600w,
-                    {{img_url feature_image size="l"}} 1000w,
-                    {{img_url feature_image size="xl"}} 2000w"
-            sizes="(max-width: 1000px) 400px, 700px"
-            src="{{img_url feature_image size="s"}}"
-            alt="{{title}}"
-        />
+      <img class="rounded"
+        srcset="{{img_url feature_image size="s"}} 300w,
+                {{img_url feature_image size="m"}} 600w,
+                {{img_url feature_image size="l"}} 1000w,
+                {{img_url feature_image size="xl"}} 2000w"
+        sizes="(max-width: 1000px) 400px, 700px"
+        src="{{img_url feature_image size="s"}}"
+        alt="{{title}}"
+      />
     {{/if}}
   </a>
-  <div class="col d-flex flex-column justify-content-top">
+  <div class="col d-flex flex-column justify-content-center">
     <div>
       <a href="{{url}}">
         <h5 class="mb-1"><b>{{title}}</b></h5>
       </a>
     </div>
-    <!-- <div>
-      <span class="badge badge-2 text-primary alt-badge">
-        <img class="icon bg-primary-3" src="ghost/assets/img/icons/interface/heart.svg" alt="heart interface icon" data-inject-svg /> 12
-      </span>
-    </div> -->
   </div>
 </li>
-
-<!-- <article class="post-card {{post_class}} {{#unless feature_image}}no-image{{else}}{{#is "home"}}{{#has index="nth:6"}}post-card-large{{/has}}{{/is}}{{/unless}}">
-
-
-    <div class="post-card-content">
-
-        <a class="post-card-content-link" href="{{url}}">
-
-            <header class="post-card-header">
-                {{#if primary_tag}}
-                    <span class="post-card-tags">{{primary_tag.name}}</span>
-                {{/if}}
-                <h2 class="post-card-title">{{title}}</h2>
-            </header>
-
-            <section class="post-card-excerpt">
-                <p>{{excerpt words="33"}}</p>
-            </section>
-
-        </a>
-
-        <footer class="post-card-meta">
-
-            <ul class="author-list">
-            {{#foreach authors}}
-                <li class="author-list-item">
-
-                    <div class="author-name-tooltip">
-                        {{name}}
-                    </div>
-
-                    {{#if profile_image}}
-                        <a href="{{url}}" class="static-avatar">
-                            <img class="author-profile-image" src="{{img_url profile_image size="xs"}}" alt="{{name}}" />
-                        </a>
-                    {{else}}
-                        <a href="{{url}}" class="static-avatar author-profile-image">{{> "icons/avatar"}}</a>
-                    {{/if}}
-                </li>
-            {{/foreach}}
-            </ul>
-
-            <span class="reading-time">{{reading_time}}</span>
-
-        </footer>
-
-    </div>{{!--/.post-card-content--}}
-
-</article> -->

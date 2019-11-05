@@ -6,43 +6,42 @@
     <title>{{meta_title}}</title>
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" type="text/css" href="{{asset "built/screen.css"}}" />
     {{ghost_head}}
     <meta name="description" content="{{meta_description}}">
-    <link href="ghost/assets/css/theme.css?v=3" rel="stylesheet" type="text/css" media="all" />
-    <link rel="preload" as="font" href="ghost/assets/fonts/Inter-UI-upright.var.woff2" type="font/woff2" crossorigin="anonymous">
-    <link rel="preload" as="font" href="ghost/assets/fonts/Inter-UI.var.woff2" type="font/woff2" crossorigin="anonymous">
+    <link href="/ghost/assets/css/theme.css?v=3" rel="stylesheet" type="text/css" media="all" />
+    <link rel="preload" as="font" href="/ghost/assets/fonts/Inter-UI-upright.var.woff2" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" as="font" href="/ghost/assets/fonts/Inter-UI.var.woff2" type="font/woff2" crossorigin="anonymous">
     <script src='https://api.mapbox.com/mapbox-gl-js/v1.2.0/mapbox-gl.js'></script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v1.2.0/mapbox-gl.css' rel='stylesheet' />
   </head>
   <body class={{body_class}} data-context="index">
     <div class="navbar-container ">
-      <nav class="navbar navbar-expand-lg navbar-light" data-overlay data-sticky="top">
+      <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container">
-          <a class="navbar-brand hadland-tab hadland-tab-index" href="javascript:history.pushState(null, null, '?page=index');window.switch();">
-            <img src="ghost/assets/img/logo.png" alt="Leap" />
+          <a class="navbar-brand hadland-tab hadland-tab-index" href="javascript:history.pushState(null, null, '/?page=index');window.switch();">
+            <img src="/ghost/assets/img/logo.png" alt="Leap" />
           </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
-            <img class="icon navbar-toggler-open" src="ghost/assets/img/icons/interface/menu.svg" alt="menu interface icon" data-inject-svg />
-            <img class="icon navbar-toggler-close" src="ghost/assets/img/icons/interface/cross.svg" alt="cross interface icon" data-inject-svg />
+            <img class="icon navbar-toggler-open" src="/ghost/assets/img/icons/interface/menu.svg" alt="menu interface icon" data-inject-svg />
+            <img class="icon navbar-toggler-close" src="/ghost/assets/img/icons/interface/cross.svg" alt="cross interface icon" data-inject-svg />
           </button>
           <div class="collapse navbar-collapse justify-content-end">
             <div class="py-2 py-lg-0">
               <ul class="navbar-nav">
                 <li class="nav-item">
-                  <a data-selected="false" href="javascript:history.pushState(null, null, '?page=activities');window.switch();" class="nav-link text-primary-2 hadland-tab hadland-tab-activities">Aktiviteter</a>
+                  <a data-selected="false" href="javascript:window.doClick=true;history.pushState(null, null, '/?page=activities');window.switch();" class="nav-link hadland-tab hadland-tab-activities">Aktiviteter</a>
                 </li>
                 <li class="nav-item">
-                  <a data-selected="false" href="javascript:history.pushState(null, null, '?page=store');window.switch();" class="nav-link text-primary-2 hadland-tab hadland-tab-store">Butikk</a>
+                  <a data-selected="false" href="javascript:window.doClick=true;history.pushState(null, null, '/?page=store');window.switch();" class="nav-link hadland-tab hadland-tab-store">Butikk</a>
                 </li>
                 <li class="nav-item">
-                  <a data-selected="false" href="javascript:history.pushState(null, null, '?page=csa');window.switch();" class="nav-link text-primary-2 hadland-tab hadland-tab-csa">Andelslandbruk</a>
+                  <a data-selected="false" href="javascript:window.doClick=true;history.pushState(null, null, '/?page=csa');window.switch();" class="nav-link hadland-tab hadland-tab-csa">Andelslandbruk</a>
                 </li>
                 <li class="nav-item">
-                  <a data-selected="false" href="javascript:history.pushState(null, null, '?page=about');window.switch();" class="nav-link text-primary-2 hadland-tab hadland-tab-about">Om</a>
+                  <a data-selected="false" href="javascript:window.doClick=true;history.pushState(null, null, '/?page=about');window.switch();" class="nav-link hadland-tab hadland-tab-about">Om</a>
                 </li>
                 <li class="nav-item">
-                  <a data-selected="false" href="javascript:history.pushState(null, null, '?page=contact');window.switch();" class="nav-link text-primary-2 hadland-tab hadland-tab-contact">Kontakt</a>
+                  <a data-selected="false" href="javascript:window.doClick=true;history.pushState(null, null, '/?page=contact');window.switch();" class="nav-link hadland-tab hadland-tab-contact">Kontakt</a>
                 </li>
               </ul>
             </div>
@@ -71,28 +70,28 @@
       integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
       crossorigin="anonymous">
     </script>
-    <script type="text/javascript" src="ghost/assets/js/popper.min.js"></script>
-    <script type="text/javascript" src="ghost/assets/js/bootstrap.js"></script>
-    <script type="text/javascript" src="ghost/assets/js/aos.js"></script>
-    <script type="text/javascript" src="ghost/assets/js/clipboard.js"></script>
-    <script type="text/javascript" src="ghost/assets/js/jquery.fancybox.min.js"></script>
-    <script type="text/javascript" src="ghost/assets/js/flatpickr.min.js"></script>
-    <script type="text/javascript" src="ghost/assets/js/flickity.pkgd.min.js"></script>
-    <script type="text/javascript" src="ghost/assets/js/ion.rangeSlider.min.js"></script>
-    <script type="text/javascript" src="ghost/assets/js/isotope.pkgd.min.js"></script>
-    <script type="text/javascript" src="ghost/assets/js/jarallax.min.js"></script>
-    <script type="text/javascript" src="ghost/assets/js/jarallax-video.min.js"></script>
-    <script type="text/javascript" src="ghost/assets/js/jarallax-element.min.js"></script>
-    <script type="text/javascript" src="ghost/assets/js/jquery.countdown.min.js"></script>
-    <script type="text/javascript" src="ghost/assets/js/jquery.smartWizard.min.js"></script>
-    <script type="text/javascript" src="ghost/assets/js/plyr.polyfilled.min.js"></script>
-    <script type="text/javascript" src="ghost/assets/js/prism.js"></script>
-    <script type="text/javascript" src="ghost/assets/js/scrollMonitor.js"></script>
-    <script type="text/javascript" src="ghost/assets/js/smooth-scroll.polyfills.min.js"></script>
-    <script type="text/javascript" src="ghost/assets/js/svg-injector.umd.production.js"></script>
-    <script type="text/javascript" src="ghost/assets/js/twitterFetcher_min.js"></script>
-    <script type="text/javascript" src="ghost/assets/js/typed.min.js"></script>
-    <script type="text/javascript" src="ghost/assets/js/theme.js"></script>
+    <script type="text/javascript" src="/ghost/assets/js/popper.min.js"></script>
+    <script type="text/javascript" src="/ghost/assets/js/bootstrap.js"></script>
+    <script type="text/javascript" src="/ghost/assets/js/aos.js"></script>
+    <script type="text/javascript" src="/ghost/assets/js/clipboard.js"></script>
+    <script type="text/javascript" src="/ghost/assets/js/jquery.fancybox.min.js"></script>
+    <script type="text/javascript" src="/ghost/assets/js/flatpickr.min.js"></script>
+    <script type="text/javascript" src="/ghost/assets/js/flickity.pkgd.min.js"></script>
+    <script type="text/javascript" src="/ghost/assets/js/ion.rangeSlider.min.js"></script>
+    <script type="text/javascript" src="/ghost/assets/js/isotope.pkgd.min.js"></script>
+    <script type="text/javascript" src="/ghost/assets/js/jarallax.min.js"></script>
+    <script type="text/javascript" src="/ghost/assets/js/jarallax-video.min.js"></script>
+    <script type="text/javascript" src="/ghost/assets/js/jarallax-element.min.js"></script>
+    <script type="text/javascript" src="/ghost/assets/js/jquery.countdown.min.js"></script>
+    <script type="text/javascript" src="/ghost/assets/js/jquery.smartWizard.min.js"></script>
+    <script type="text/javascript" src="/ghost/assets/js/plyr.polyfilled.min.js"></script>
+    <script type="text/javascript" src="/ghost/assets/js/prism.js"></script>
+    <script type="text/javascript" src="/ghost/assets/js/scrollMonitor.js"></script>
+    <script type="text/javascript" src="/ghost/assets/js/smooth-scroll.polyfills.min.js"></script>
+    <script type="text/javascript" src="/ghost/assets/js/svg-injector.umd.production.js"></script>
+    <script type="text/javascript" src="/ghost/assets/js/twitterFetcher_min.js"></script>
+    <script type="text/javascript" src="/ghost/assets/js/typed.min.js"></script>
+    <script type="text/javascript" src="/ghost/assets/js/theme.js"></script>
     <script type="text/javascript">
       window.addEventListener('load', function () {
         document.querySelector('body').classList.add('loaded');
@@ -119,6 +118,9 @@
           item.setAttribute('data-selected', 'false');
         });
         document.querySelector('.hadland-tab-' + (getUrlParameter('page') || 'index')).setAttribute('data-selected', 'true');
+        if ($('.navbar-toggler')[0].offsetParent !== null && window.doClick) {
+          document.querySelector('.navbar-toggler').click();
+        }
         window.scrollTo(0, 0);
       }
       window.onpopstate = function() {

@@ -1,22 +1,15 @@
-<li class="row row-tight col-lg-4 col-md-4 mb-4">
-  <a href="{{url}}" class="col-lg-4 col-md-4">
-    {{#if feature_image}}
-      <img class="rounded"
-        srcset="{{img_url feature_image size="s"}} 300w,
-                {{img_url feature_image size="m"}} 600w,
-                {{img_url feature_image size="l"}} 1000w,
-                {{img_url feature_image size="xl"}} 2000w"
-        sizes="(max-width: 1000px) 400px, 700px"
-        src="{{img_url feature_image size="s"}}"
-        alt="{{title}}"
-      />
-    {{/if}}
+<div class="col-sm-6 col-lg-3 mb-4" data-isotope-item data-category="Branding">
+  <a href="{{url}}">
+    <img class="rounded mb-3"
+      srcset="{{img_url feature_image size="s"}} 300w,
+              {{img_url feature_image size="m"}} 600w,
+              {{img_url feature_image size="l"}} 1000w,
+              {{img_url feature_image size="xl"}} 2000w"
+      sizes="(max-width: 1000px) 400px, 700px"
+      src="{{img_url feature_image size="m"}}"
+      alt="{{title}}"
+    />
+    <h4 class="mb-0">{{title}}</h4>
+    <div class="text-small text-muted">...</div>
   </a>
-  <div class="col d-flex flex-column justify-content-center">
-    <div>
-      <a href="{{url}}">
-        <h5 class="mb-1"><b>{{title}}</b></h5>
-      </a>
-    </div>
-  </div>
-</li>
+</div>

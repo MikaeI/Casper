@@ -1,20 +1,15 @@
 {{!< default}}
-<section class="has-divider text-light jarallax" data-jarallax data-speed="0.5" data-overlay>
-  <img src="ghost/assets/img/banner.jpg" alt="" class="jarallax-img opacity-50">
+<section class="text-dark hadland-main">
   <div class="container pb-0">
     <div class="row hadland-row hadland-row-index">
-      <div class="col-xl-6 col-lg-6 col-md-6">
-        <h1 class="display-4 text-primary">{{meta_title}}</h1>
-        <p class="lead mb-0 text-primary-2">
+      <div class="col-xl-6 col-lg-6 col-md-6 pt-0 pr-7">
+        <h1>{{meta_title}}</h1>
+        <p class="lead mb-5">
           {{meta_description}}
-          <br />
-          <br />
         </p>
       </div>
-      <div class="col-xl-6 col-lg-6 col-md-6">
+      <div class="col-xl-6 col-lg-6 col-md-6 pt-0">
         <div id='map' class="min-vh-30 w-100 rounded"></div>
-        <br />
-        <br />
         <script>
           mapboxgl.accessToken = 'pk.eyJ1IjoibWlrYWVpIiwiYSI6ImNqemt4aHR4aTA5ZmozbG54bXduaWJjMjQifQ.ua_iNdB0eK5QkywayJWWJQ';
           var map = new mapboxgl.Map({
@@ -35,74 +30,58 @@
       </div>
     </div>
     <div class="row hadland-row hadland-row-store">
-      <div class="col-xl-12 col-lg-12 col-md-12">
-        <h1 class="display-4 text-primary">Butikk</h1>
+      <div class="col-xl-12 col-lg-12 col-md-12 pt-7">
+        <h1>Butikk</h1>
       </div>
     </div>
     <div class="row hadland-row hadland-row-activities">
-      <div class="col-xl-12 col-lg-12 col-md-12">
-        <h1 class="display-4 text-primary">Aktiviteter</h1>
+      <div class="col-xl-12 col-lg-12 col-md-12 pt-7">
+        <h1>Aktiviteter</h1>
       </div>
     </div>
     <div class="row hadland-row hadland-row-csa">
-      <div class="col-xl-12 col-lg-12 col-md-12">
-        <h1 class="display-4 text-primary">Hadland andelslandbruk</h1>
+      <div class="col-xl-12 col-lg-12 col-md-12 pt-7">
+        <h1>Hadland andelslandbruk</h1>
       </div>
     </div>
     <div class="row hadland-row hadland-row-about">
-      <div class="col-xl-12 col-lg-12 col-md-12">
-        <h1 class="display-4 text-primary">Om</h1>
+      <div class="col-xl-12 col-lg-12 col-md-12 pt-7">
+        <h1>Om</h1>
       </div>
     </div>
     <div class="row hadland-row hadland-row-contact">
-      <div class="col-xl-12 col-lg-12 col-md-12">
-        <h1 class="display-4 text-primary">Kontakt</h1>
+      <div class="col-xl-12 col-lg-12 col-md-12 pt-7">
+        <h1>Kontakt</h1>
       </div>
     </div>
-  </div>
-  <div class="divider">
-    <img src="ghost/assets/img/dividers/divider-2.svg" alt="graphical divider" data-inject-svg />
   </div>
 </section>
 <section class="pt-2 pb-2">
   <div class="container">
+
+
+
     <div class="row hadland-row hadland-row-index">
       <div class="col">
         <h3 class="h2">Aktuelt</h3>
       </div>
     </div>
-    <div class="row hadland-row hadland-row-store">
-      <div class="col">
-        <h3 class="h2"></h3>
-      </div>
-    </div>
-    <div class="row hadland-row hadland-row-activities">
-      <div class="col">
-        <h3 class="h2">Kommende hendelser</h3>
-      </div>
-    </div>
-    <div class="row hadland-row hadland-row-csa">
-    </div>
-    <div class="row hadland-row hadland-row-about">
-      <div class="col">
-        <h3 class="h2">Hadland økologiske gard</h3>
-      </div>
-    </div>
-    <div class="row hadland-row hadland-row-contact">
-      <div class="col">
-        <h3 class="h2">Ansatte</h3>
-      </div>
-    </div>
     <div class="row hadland-row hadland-row-index">
-      <div class="col-md-7 col-lg-8 d-flex">
-        {{#foreach posts from="1" to="1"}}
+      {{#foreach posts from="1" to="1"}}
+        <div class="col-md-7 col-lg-8 d-flex">
           <a href="{{url}}" class="card card-body overlay border-0 text-light mb-md-0 justify-content-end">
             <div class="position-relative">
+              {{#if primary_tag}}
+                <span class="badge bg-primary">{{primary_tag.name}}</span>
+              {{/if}}
               <div class="my-3">
-                {{#if primary_tag}}
-                  <span class="badge bg-primary text-primary-2 hadland-faded">{{primary_tag.name}}</span>
-                {{/if}}
-                <h2 class="text-primary">{{title}}</h2>
+                <h2>{{title}}</h2>
+              </div>
+              <div class="d-flex align-items-center">
+                <img src="/ghost/assets/img/avatars/female-4.jpg" alt="Avatar" class="avatar avatar-sm mr-2">
+                <div>
+                  <div class="flex-shrink-0">by Annabelle Roberts</div>
+                </div>
               </div>
             </div>
             {{#if feature_image}}
@@ -117,37 +96,98 @@
               />
             {{/if}}
           </a>
-        {{/foreach}}
-      </div>
+        </div>
+      {{/foreach}}
       <div class="col-md-5 col-lg-4">
         <ul class="list-unstyled list-articles">
-          {{#foreach posts from="2" to="4"}}
+          {{#foreach posts from="2" to="6"}}
             {{> "post-card"}}
           {{/foreach}}
         </ul>
       </div>
     </div>
-    <div class="row hadland-row hadland-row-store">
-      <div class="col-md-12 col-lg-12">
-        <ul class="list-unstyled list-articles hadland-full">
-          {{#foreach posts}}
-            {{#has tag="produkt"}}
-              {{> "post-card-store"}}
-            {{/has}}
-          {{/foreach}}
-        </ul>
-      </div>
+    <div class="row hadland-row hadland-row-activities">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Dato:</th>
+            <th scope="col">Arrangement:</th>
+            <th scope="col">Lenke:</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">20.11.2020</th>
+            <td><b>Test</b></td>
+            <td><a href="#" class="text-primary-2"><u>Klikk her</u></a></td>
+          </tr>
+          <tr>
+            <th scope="row">20.11.2020</th>
+            <td><b>Test</b></td>
+            <td><a href="#" class="text-primary-2"><u>Klikk her</u></a></td>
+          </tr>
+          <tr>
+            <th scope="row">20.11.2020</th>
+            <td><b>Test</b></td>
+            <td><a href="#" class="text-primary-2"><u>Klikk her</u></a></td>
+          </tr>
+          <tr>
+            <th scope="row">20.11.2020</th>
+            <td><b>Test</b></td>
+            <td><a href="#" class="text-primary-2"><u>Klikk her</u></a></td>
+          </tr>
+          <tr>
+            <th scope="row">20.11.2020</th>
+            <td><b>Test</b></td>
+            <td><a href="#" class="text-primary-2"><u>Klikk her</u></a></td>
+          </tr>
+          <tr>
+            <th scope="row">20.11.2020</th>
+            <td><b>Test</b></td>
+            <td><a href="#" class="text-primary-2"><u>Klikk her</u></a></td>
+          </tr>
+          <tr>
+            <th scope="row">20.11.2020</th>
+            <td><b>Test</b></td>
+            <td><a href="#" class="text-primary-2"><u>Klikk her</u></a></td>
+          </tr>
+          <tr>
+            <th scope="row">20.11.2020</th>
+            <td><b>Test</b></td>
+            <td><a href="#" class="text-primary-2"><u>Klikk her</u></a></td>
+          </tr>
+        </tbody>
+      </table>
     </div>
-    <div class="row hadland-row hadland-row-contact">
-      <div class="col-md-12 col-lg-12">
-        <ul class="list-unstyled list-articles hadland-full">
-          {{#foreach posts}}
-            {{#has tag="kontakt"}}
-              {{> "post-card-store"}}
-            {{/has}}
-          {{/foreach}}
-        </ul>
-      </div>
+    <div class="row hadland-row hadland-row-store" data-isotope-collection data-isotope-id="projects">
+      {{#foreach posts}}
+        {{#has tag="produkt"}}
+          {{> "post-card-store"}}
+        {{/has}}
+      {{/foreach}}
+    </div>
+    <div class="row hadland-row hadland-row-contact text-center">
+      {{#foreach posts}}
+        {{#has tag="kontakt"}}
+          <div class="col-sm-4 mb-6">
+            <h3 class="h2">Besøk</h3>
+            <span class="lead">
+              Hadlandsvegen 150
+              <br />4347 Lye
+            </span>
+          </div>
+          <div class="col-sm-4 mb-6">
+            <h3 class="h2">E-post</h3>
+            <a href="mailto:post@hadland-gard.no" class="lead">post@hadland-gard.no</a>
+          </div>
+          <div class="col-sm-4 mb-6">
+            <h3 class="h2">Telefon</h3>
+            <span class="lead">
+              999 99 999
+            </span>
+          </div>
+        {{/has}}
+      {{/foreach}}
     </div>
   </div>
 </section>

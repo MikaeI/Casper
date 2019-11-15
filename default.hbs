@@ -15,11 +15,14 @@
     <link href='https://api.mapbox.com/mapbox-gl-js/v1.2.0/mapbox-gl.css' rel='stylesheet' />
   </head>
   <body class={{body_class}} data-context="index">
+    <script>
+      window.isSubPage = false;
+    </script>
     <div class="navbar-container ">
       <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container">
           <a class="navbar-brand hadland-tab hadland-tab-index" href="javascript:history.pushState(null, null, '/?page=index');window.switch();">
-            <img src="/ghost/assets/img/logo.png" alt="Leap" />
+            <img src="/ghost/assets/img/logo.png" alt="Hadland" />
           </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
             <img class="icon navbar-toggler-open" src="/ghost/assets/img/icons/interface/menu.svg" alt="menu interface icon" data-inject-svg />
@@ -28,6 +31,9 @@
           <div class="collapse navbar-collapse justify-content-end">
             <div class="py-2 py-lg-0">
               <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a data-selected="false" href="javascript:window.doClick=true;history.pushState(null, null, '/?page=index');window.switch();" class="nav-link hadland-tab hadland-tab-index hadland-tab-hide">Hjem</a>
+                </li>
                 <li class="nav-item">
                   <a data-selected="false" href="javascript:window.doClick=true;history.pushState(null, null, '/?page=activities');window.switch();" class="nav-link hadland-tab hadland-tab-activities">Aktiviteter</a>
                 </li>
@@ -40,9 +46,6 @@
                 <li class="nav-item">
                   <a data-selected="false" href="javascript:window.doClick=true;history.pushState(null, null, '/?page=about');window.switch();" class="nav-link hadland-tab hadland-tab-about">Om</a>
                 </li>
-                <li class="nav-item">
-                  <a data-selected="false" href="javascript:window.doClick=true;history.pushState(null, null, '/?page=contact');window.switch();" class="nav-link hadland-tab hadland-tab-contact">Kontakt</a>
-                </li>
               </ul>
             </div>
           </div>
@@ -50,14 +53,14 @@
       </nav>
     </div>
     {{{body}}}
-    <footer class="pb-4" id="footer">
+    <footer class="pb-4 bg-light pt-4" id="footer">
       <div class="container">
         <div class="row justify-content-center mb-2">
           <div class="col-auto">
             <div class="row justify-content-center">
               <div class="col col-md-auto text-center">
                 <small class="text-muted">
-                  <a class="text-primary-2" href="{{@site.url}}">{{@site.title}}</a> &copy; {{date format="YYYY"}}
+                  <a class="text-secondary" href="{{@site.url}}">{{@site.title}}</a> &copy; {{date format="YYYY"}}
                 </small>
               </div>
             </div>
@@ -113,15 +116,21 @@
         return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
       };
       window.switch = function() {
-        document.querySelector('body').setAttribute('data-context', getUrlParameter('page') || 'index');
-        document.querySelectorAll('[data-selected]').forEach(function(item) {
-          item.setAttribute('data-selected', 'false');
-        });
-        document.querySelector('.hadland-tab-' + (getUrlParameter('page') || 'index')).setAttribute('data-selected', 'true');
-        if ($('.navbar-toggler')[0].offsetParent !== null && window.doClick) {
-          document.querySelector('.navbar-toggler').click();
+        if (window.isSubPage) {
+          location.reload();
+        } else {
+          document.querySelector('body').setAttribute('data-context', getUrlParameter('page') || 'index');
+          document.querySelectorAll('[data-selected]').forEach(function(item) {
+            item.setAttribute('data-selected', 'false');
+          });
+          document.querySelectorAll('.hadland-tab-' + (getUrlParameter('page') || 'index')).forEach(function(item) {
+            item.setAttribute('data-selected', 'true');
+          });
+          if ($('.navbar-toggler')[0].offsetParent !== null && window.doClick) {
+            document.querySelector('.navbar-toggler').click();
+          }
+          window.scrollTo(0, 0);
         }
-        window.scrollTo(0, 0);
       }
       window.onpopstate = function() {
         window.switch();
@@ -133,7 +142,9 @@
           document.addEventListener('DOMContentLoaded', fn);
         }
       }
-      ready(window.switch);
+      if (!window.isSubPage) {
+        ready(window.switch);
+      }
     </script>
     <script type="text/javascript" src="{{asset "built/jquery.fitvids.js"}}"></script>
   </body>
